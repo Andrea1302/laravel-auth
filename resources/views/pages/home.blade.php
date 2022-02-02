@@ -10,20 +10,19 @@
 <h1>
     If you want to see my site you have to login/register
 </h1>
-@endauth
     <h2>
         Registrazione 
     </h2>
     <div class="homepage">
         <div id="registrati">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="post" action="{{ route('register') }}">
             
                 @method('post')
                 @csrf
     
                 {{-- name --}}
                 <label for="name">Inserisci il nome</label>
-                <input type="text" name="name" placeholder="name" id="">
+                <input type="text" name="name" placeholder="name" value="ABC" id="">
     
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -56,7 +55,7 @@
                  <label for="password-confirm">Conferma Password</label>
                  <input type="password" name="password_confirmation" id="">
     
-                <input type="submit" value="Invia">
+                <input type="submit" value="Registrati">
             </form>
         </div>
        
@@ -91,12 +90,13 @@
                  @enderror
    
     
-                <input type="submit" value="Invia">
+                <input type="submit" value="Accedi">
             </form>
         </div>
     </div>
 
     
+    @endauth
 
     
 @endsection

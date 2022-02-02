@@ -13,15 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// unset($_SESSION);
 Route::get('/', 'Homepage@home') -> name('home');
 
 
 
-// Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::get('/logout', 'Auth\LoginController@logout ')->name('logout');
-
-
-
+Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/register', 'Auth\RegisterController@register') -> name('register');
 
+Route::post('/login', 'Auth\LoginController@login') -> name('login');
+
+Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
+
+// maurizio 
+
+
+// Route::get('/', 'Homepage@home') -> name('home');
+
+// Route::post('/register', 'Auth\RegisterController@register') -> name('register');
+// Route::post('/login', 'Auth\LoginController@login') -> name('login');
+
+// Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
